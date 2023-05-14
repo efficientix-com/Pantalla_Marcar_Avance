@@ -8,7 +8,7 @@
  * @copyright Tekiio México 2023
  * 
  * Client              -> Fasemex
- * Last modification   -> 18/04/2023
+ * Last modification   -> 14/05/2023
  * Modified by         -> Dylan Mendoza <dylan.mendoza@freebug.mx>
  * Script in NS        -> ProNest Reporte de avance SL <customscript_tkio_repor_avanc_sl>
  */
@@ -158,9 +158,10 @@ define(['N/log', 'N/task', 'N/ui/serverWidget', 'N/url', 'N/https', 'N/redirect'
                 var tableData = '</br></br>'
                 tableData += '<table border="2" width=200% style="border-collapse: collapse" id="table_result">';
                 tableData +=    '<tr>'
+                tableData +=        '<th style="background-color: #E0E6EF"><b>No.</b></th>'
                 tableData +=        '<th style="background-color: #E0E6EF"><b>Orden de trabajo</b></th>'
                 tableData +=        '<th style="background-color: #E0E6EF"><b>Marca</b></th>'
-                tableData +=        '<th style="background-color: #E0E6EF"><b>Cantidad en OT</b></th>'
+                tableData +=        '<th style="background-color: #E0E6EF"><b>Cantidad en NEST</b></th>'
                 tableData +=        '<th style="background-color: #E0E6EF"><b>Cantidad completada</b></th>'
                 tableData +=        '<th style="background-color: #E0E6EF"><b>Cantidad Scrap</b></th>'
                 tableData +=    '</tr>'

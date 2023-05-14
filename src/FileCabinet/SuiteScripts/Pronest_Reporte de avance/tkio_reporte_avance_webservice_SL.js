@@ -8,7 +8,7 @@
  * @copyright Tekiio México 2023
  * 
  * Client              -> Fasemex
- * Last modification   -> 27/04/2023
+ * Last modification   -> 14/05/2023
  * Modified by         -> Dylan Mendoza <dylan.mendoza@freebug.mx>
  * Script in NS        -> ProNest Servicio para reporte <customscript_tkio_repor_avanc_ws_sl>
  */
@@ -90,6 +90,7 @@ define(['N/log', 'N/record', 'N/search'],
                         });
                         var dataOt = [];
                         var otFound = [];
+                        var cantAux = [];
                         var myPagedData1 = customrecord_tkio_deposito_datos_pronestSearchObj.runPaged({
                             pageSize: 1000
                         });
@@ -101,6 +102,7 @@ define(['N/log', 'N/record', 'N/search'],
                                     var otId = result.getValue({name: 'custrecord_tkio_orden_de_trabajo'});
                                     if (otId) {
                                         dataOt.push(result.getValue({name: 'custrecord_tkio_orden_de_trabajo'}));
+                                        cantAux.push({otid: result.getValue({name: 'custrecord_tkio_orden_de_trabajo'}), amountgoods: result.getValue({name: 'custrecord_tkio_amount_good_pronest'})});
                                     }
                                 });
                             });
@@ -166,20 +168,31 @@ define(['N/log', 'N/record', 'N/search'],
                             pageSize: 1000
                         });
                         log.debug("OT con Centro de trabajo relacionado",myPagedData.count);
-                        var idTran, itemTran, cantTran, cantEntTran, cantCompTran, centro;
+                        var idTran, itemTran, cantTran, cantEntTran, cantCompTran, centro, idWo;
                         var banderaCentro = false;
                         myPagedData.pageRanges.forEach(function(pageRange){
                             var myPage = myPagedData.fetch({index: pageRange.index});
                             myPage.data.forEach(function(result){
+                                cantTran = null;
+                                idWo = result.getValue({
+                                    name: 'internalid'
+                                });
+                                for (var amountLine = 0; amountLine < cantAux.length; amountLine++) {
+                                    if (idWo == cantAux[amountLine].otid) {
+                                        cantTran = cantAux[amountLine].amountgoods;
+                                    }
+                                }
                                 idTran = result.getValue({
                                     name: 'tranid'
                                 });
                                 itemTran = result.getText({
                                     name: 'item'
                                 });
-                                cantTran = result.getValue({
-                                    name: 'quantity'
-                                });
+                                if (cantTran == null) {
+                                    cantTran = result.getValue({
+                                        name: 'quantity'
+                                    });
+                                }
                                 cantEntTran = result.getValue({
                                     name: "inputquantity",
                                     join: "manufacturingOperationTask"

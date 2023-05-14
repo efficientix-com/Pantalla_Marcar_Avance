@@ -9,7 +9,7 @@
  * @copyright Tekiio México 2023
  * 
  * Client              -> Fasemex
- * Last modification   -> 18/04/2023
+ * Last modification   -> 14/05/2023
  * Modified by         -> Dylan Mendoza <dylan.mendoza@freebug.mx>
  * Script in NS        -> N/A <N/A>
  */
@@ -258,15 +258,17 @@ function(currentRecord, message, https, url, runtime, record) {
                     let itemData = myresponse_body.data[line].item;
                     let quantityData = myresponse_body.data[line].quantity;
                     console.log('Linea: ' + line + ' ot: ' + otData + ' item: ' + itemData + ' cantidad: ' + quantityData);
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    var cell3 = row.insertCell(2);
-                    var cell4 = row.insertCell(3);
-                    var cell5 = row.insertCell(4);
+                    var cell0 = row.insertCell(0);
+                    var cell1 = row.insertCell(1);
+                    var cell2 = row.insertCell(2);
+                    var cell3 = row.insertCell(3);
+                    var cell4 = row.insertCell(4);
+                    var cell5 = row.insertCell(5);
+                    cell0.innerHTML = line+1;
                     cell1.innerHTML = otData;
                     cell2.innerHTML = itemData;
                     cell3.innerHTML = quantityData;
-                    cell4.innerHTML = '<input type="number" style="width : 100%; heigth : 100%" id="cantidad_nest_'+ (line+1) +'">';
+                    cell4.innerHTML = '<input type="number" style="width : 100%; heigth : 100%" id="cantidad_nest_'+ (line+1) +'" value="'+quantityData+'">';
                     cell5.innerHTML = '<input type="number" style="width : 100%; heigth : 100%" id="cantidad_scrap_'+ (line+1) +'">';
                 }
                 dataReturn.succes = true;
