@@ -1,0 +1,20 @@
+<customlist scriptid="customlist_tkio_crea_by_pronest">
+  <description>Lista con datos desde donde fue creado el registro de seguimiento.</description>
+  <isinactive>F</isinactive>
+  <isordered>T</isordered>
+  <name>Origen de creacion ProNest rep</name>
+  <customvalues>
+    <customvalue scriptid="val_93985_7412842_sb1_398">
+      <isinactive>F</isinactive>
+      <value>Web Service</value>
+    </customvalue>
+    <customvalue scriptid="val_93986_7412842_sb1_537">
+      <isinactive>F</isinactive>
+      <value>Pantalla de reporte</value>
+    </customvalue>
+    <customvalue scriptid="val_93987_7412842_sb1_442">
+      <isinactive>F</isinactive>
+      <value>Manualmente</value>
+    </customvalue>
+  </customvalues>
+</customlist>

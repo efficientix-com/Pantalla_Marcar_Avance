@@ -1,0 +1,25 @@
+<suitelet scriptid="customscript_tkio_repor_avanc_ws_sl">
+  <description>Suitlet para el funcionamiento como servicio para consultar y crear datos en Netsuite</description>
+  <isinactive>F</isinactive>
+  <name>ProNest Servicio para reporte</name>
+  <notifyadmins>F</notifyadmins>
+  <notifyemails></notifyemails>
+  <notifyowner>T</notifyowner>
+  <notifyuser>F</notifyuser>
+  <scriptfile>[/SuiteScripts/Pronest_Reporte de avance/tkio_reporte_avance_webservice_SL.js]</scriptfile>
+  <scriptdeployments>
+    <scriptdeployment scriptid="customdeploy_tkio_repor_avanc_ws_sl">
+      <allemployees>T</allemployees>
+      <allpartners>F</allpartners>
+      <allroles>T</allroles>
+      <audslctrole></audslctrole>
+      <eventtype></eventtype>
+      <isdeployed>T</isdeployed>
+      <isonline>T</isonline>
+      <loglevel>DEBUG</loglevel>
+      <runasrole>ADMINISTRATOR</runasrole>
+      <status>RELEASED</status>
+      <title>ProNest Servicio para reporte</title>
+    </scriptdeployment>
+  </scriptdeployments>
+</suitelet>

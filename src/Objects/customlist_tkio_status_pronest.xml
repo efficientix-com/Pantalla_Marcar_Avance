@@ -1,0 +1,24 @@
+<customlist scriptid="customlist_tkio_status_pronest">
+  <description>Lista con los valores a utilizar para el procesamiento de la informacion del reporte de avance de pronest</description>
+  <isinactive>F</isinactive>
+  <isordered>T</isordered>
+  <name>Estatus de procesamiento</name>
+  <customvalues>
+    <customvalue scriptid="val_85996_7412842_sb1_827">
+      <isinactive>F</isinactive>
+      <value>Capturado</value>
+    </customvalue>
+    <customvalue scriptid="val_85997_7412842_sb1_165">
+      <isinactive>F</isinactive>
+      <value>Procesando</value>
+    </customvalue>
+    <customvalue scriptid="val_85998_7412842_sb1_783">
+      <isinactive>F</isinactive>
+      <value>Procesado</value>
+    </customvalue>
+    <customvalue scriptid="val_85999_7412842_sb1_397">
+      <isinactive>F</isinactive>
+      <value>Error</value>
+    </customvalue>
+  </customvalues>
+</customlist>

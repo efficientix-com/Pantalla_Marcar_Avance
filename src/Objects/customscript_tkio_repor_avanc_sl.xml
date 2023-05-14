@@ -1,0 +1,25 @@
+<suitelet scriptid="customscript_tkio_repor_avanc_sl">
+  <description>Pantalla para marcar el avance de la producción de las ordenes de trabajo.</description>
+  <isinactive>F</isinactive>
+  <name>ProNest Reporte de avance SL</name>
+  <notifyadmins>F</notifyadmins>
+  <notifyemails></notifyemails>
+  <notifyowner>T</notifyowner>
+  <notifyuser>F</notifyuser>
+  <scriptfile>[/SuiteScripts/Pronest_Reporte de avance/tkio_reporte_avance_SL.js]</scriptfile>
+  <scriptdeployments>
+    <scriptdeployment scriptid="customdeploy_tkio_repor_avanc_sl">
+      <allemployees>T</allemployees>
+      <allpartners>F</allpartners>
+      <allroles>T</allroles>
+      <audslctrole></audslctrole>
+      <eventtype></eventtype>
+      <isdeployed>T</isdeployed>
+      <isonline>T</isonline>
+      <loglevel>DEBUG</loglevel>
+      <runasrole>ADMINISTRATOR</runasrole>
+      <status>RELEASED</status>
+      <title>ProNest Reporte de avance SL</title>
+    </scriptdeployment>
+  </scriptdeployments>
+</suitelet>
