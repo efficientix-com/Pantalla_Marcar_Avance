@@ -355,13 +355,13 @@ function(currentRecord, message, https, url, runtime, record) {
                     for (let cell of row.cells) {
                         let dato = cell.innerHTML;
                         switch (countColumn) {
-                            case 0:
+                            case 1:
                                 cellInfo.ot = dato;
                                 break;
-                            case 1:
+                            case 2:
                                 cellInfo.item = dato;
                                 break;
-                            case 2:
+                            case 3:
                                 cellInfo.cant_ot = dato;
                                 break;
                         }
