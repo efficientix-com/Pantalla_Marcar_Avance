@@ -247,7 +247,7 @@ define(['N/log', 'N/record', 'N/search'],
                         "AND",
                         ["isinactive","is","F"],
                         // "AND",
-                        // ["internalid","anyof","313","614","618","722","825","826","827","1112","1111"]
+                        // ["internalid","anyof","3246"]
                     ],
                     columns:
                     [
@@ -321,7 +321,7 @@ define(['N/log', 'N/record', 'N/search'],
                        "AND", 
                        ["isinactive","is","F"],
                     //    "AND", 
-                    //    ["internalid","anyof","615","1107","1106","1108","1109","1103","1102","1105"]
+                    //    ["internalid","anyof","313"]
                     ],
                     columns:
                     [
@@ -573,6 +573,25 @@ define(['N/log', 'N/record', 'N/search'],
                             });
                             inventoryDetail.commitLine({
                                 sublistId: 'inventoryassignment'
+                            });
+                        }
+                    }
+                    if (datos.corte) { // Se consume cantidad de material
+                        var numComponents = objRecord.getLineCount({
+                            sublistId: 'component'
+                        });
+                        for (var componentLine = 0; componentLine < numComponents; componentLine++) {
+                            objRecord.selectLine({
+                                sublistId: 'component',
+                                line: componentLine
+                            });
+                            objRecord.setCurrentSublistValue({
+                                sublistId: 'component',
+                                fieldId: 'quantity',
+                                value: datos.cant_consum
+                            });
+                            objRecord.commitLine({
+                                sublistId: 'component'
                             });
                         }
                     }
